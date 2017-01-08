@@ -1,0 +1,31 @@
+{
+  "name": "kei",
+  "version": "1.0.0",
+  "main": "./released/main.js",
+  "license": "MIT",
+  "dependencies": {
+    "dist-exiftool": "^10.33.1",
+    "electron": "1.4.8",
+    "exiftool.exe": "^10.33.0",
+    "exiftool.pl": "^10.33.0",
+    "mithril": "^0.2.5",
+    "node-exiftool": "^2.1.1",
+    "photon": "https://github.com/connors/photon",
+    "shelljs": "^0.7.5"
+  },
+  "devDependencies": {
+    "@types/mithril": "^0.0.31",
+    "@types/node": "^6.0.52",
+    "@types/shelljs": "^0.3.33",
+    "del": "^2.2.2",
+    "devtron": "^1.4.0",
+    "electron-connect": "^0.6.1",
+    "eslint": "^3.11.1",
+    "gulp": "^3.9.1",
+    "gulp-tslint": "^7.0.1",
+    "gulp-typescript": "^3.1.3",
+    "run-sequence": "^1.2.2",
+    "tslint": "^4.0.2",
+    "typescript": "^2.1.4"
+  }
+}
