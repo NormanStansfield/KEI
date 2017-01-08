@@ -63,13 +63,13 @@ export class BatchModeComponent implements Mithril.Component<BatchModeController
 
     // Settings
 
-    if(this.title().length > 0) {
-      data['ObjectName'] = this.title()
-    }
-
     // Remove All existing tags
     if(this.vm.settings.isRemoveAll()) {
       data['all'] = ''
+    }
+
+    if(this.title().length > 0) {
+      data['ObjectName'] = this.title()
     }
 
     if(this.keywords().length > 0) {
@@ -161,7 +161,7 @@ export class BatchModeComponent implements Mithril.Component<BatchModeController
                         m("span[class='']", {onclick: this.onclickReset},
                           m("button.btn.btn-large.btn-default",
                             [
-                              m("span.icon.icon-erase"),
+                              m("span.icon.icon-cancel"),
                               m.trust("&nbsp;"),
                               "Reset"
                             ]
