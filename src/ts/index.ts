@@ -16,6 +16,10 @@ const batchmode = new BatchModeComponent(model)
 const settings = new SettingsComponent(model)
 const footer = new FooterComponent(model)
 
+// Application close
+window.onbeforeunload = (evt) => {
+  model.ep.close()
+}
 
 // route
 m.route(document.body, '/', {
