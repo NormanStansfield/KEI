@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/photon.css">
+  <title>Tag Setter</title>
+  <script>require('electron-connect').client.create()</script>
+</head>
+
+<body>
+
+  <div class="window">
+    <header class="toolbar toolbar-header">
+      <h1 class="title">Settings</h1>
+
+      <div class="toolbar-actions">
+        <div class="btn-group">
+          <button class="btn  btn-large btn-default">
+            <span class="icon icon-home"></span>&nbsp;Home</button>
+          <button class="btn btn-large btn-default">
+            <span class="icon icon-folder"></span>&nbsp;Folder</button>
+        </div>
+
+        <button class="btn btn-large btn-default">
+          <span class="icon icon-arrows-ccw"></span>&nbsp;Refresh</button>
+        <button class="btn btn-large btn-default">
+          <span class="icon icon-brush"></span>&nbsp;Set Tags</button>
+
+        <div class="btn-group pull-right">
+          <button class="btn btn-large btn-default">
+            <span class="icon icon-cog"></span>&nbsp;Settings</button>
+          <button class="btn btn-large btn-default">
+            <span class="icon icon-info-circled"></span>&nbsp;About</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="window-content">
+      <div class="pane-group">
+        <div class="pane-sm sidebar" style="width:220px;">
+
+          <nav class="nav-group">
+            <p class="nav-group-title text-center"></p>
+            <p class="nav-group-item">
+              <span>Settings</span>
+            </p>
+          </nav>
+        </div>
+
+        <div class="pane" style="background-color: #f0f0f0;word-wrap: break-word;">
+          <div class="form-group padded-more">
+            <div class="form-group">
+              <div class="checkbox form-control">
+                <label>
+                  <input type="checkbox"> <span>Remove all existing tags</span>
+                </label>
+                <p>Remove all existing tags before added Title and keywords</p>
+              </div>
+              <div class="checkbox form-control">
+                <label>
+                  <input type="checkbox"> <span>Overwrite existing Keywords</span>
+                </label>
+                <p>Remove all existing Keywords before added Keywords</p>
+              </div>
+
+              <div class="form-control">
+                <span class="">Separator</span>
+                &emsp;
+                <span class="">
+                  <select class="">
+                    <option value=",">Comma</option>
+                    <option value=";">Semi-colon</option>
+                  </select>
+                </span>
+                <p>Keywords string separator. Choose comma or semi-colon</p>
+              </div>
+
+              <div class="checkbox form-control">
+                <label>
+                  <input type="checkbox"> <span>Ignore Minor Error : Exiftool Option</span>
+                </label>
+                <p>Ignore Minor Error of Exiftool. If set ON, minor error message is in title field</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="toolbar toolbar-footer">
+      <h1 class="title">Status: </h1>
+    </footer>
+  </div>
+
+</body>
+</html>

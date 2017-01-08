@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/photon.css">
+  <title>About</title>
+</head>
+<body>
+
+  <div class="window toolbar">
+    <div class="padded-more toolbar toolbar-header">
+      <div class="padded">
+        <strong>
+          Keyword Editor for IPTC
+        </strong>
+        <br>
+        Read / Write Keywords on IPTC for JPEG. ExifTool Front-end
+        <br>
+        <br>
+        Copyright (c) 2017 <a id="about" target="_blank" href="http://www.markcreators.net/">NormanStansfield / Mark Creators</a>
+        <br>
+        The MIT License (MIT)
+        <br>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<script type="text/javascript">
+  var shell = require('electron').shell;
+  var about = document.getElementById('about')
+  about.onclick  = function (evt) {
+    shell.openExternal(about.href);
+  };
+</script>
+
+</html>

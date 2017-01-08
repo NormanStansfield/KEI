@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/photon.css">
+  <title>Tag Setter</title>
+  <script>require('electron-connect').client.create()</script>
+</head>
+
+<body>
+
+  <div class="window">
+    <header class="toolbar toolbar-header">
+      <h1 class="title">Main Window</h1>
+
+      <div class="toolbar-actions">
+        <div class="btn-group">
+          <button class="btn  btn-large btn-default">
+            <span class="icon icon-home"></span>&nbsp;Home</button>
+          <button class="btn btn-large btn-default">
+            <span class="icon icon-folder"></span>&nbsp;Folder</button>
+        </div>
+
+        <button class="btn btn-large btn-default">
+          <span class="icon icon-arrows-ccw"></span>&nbsp;Refresh</button>
+        <button class="btn btn-large btn-default">
+          <span class="icon icon-brush"></span>&nbsp;Set Tags</button>
+
+        <div class="btn-group pull-right">
+          <button class="btn btn-large btn-default">
+            <span class="icon icon-cog"></span>&nbsp;Settings</button>
+          <button class="btn btn-large btn-default">
+            <span class="icon icon-info-circled"></span>&nbsp;About</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="window-content">
+      <div class="pane-group">
+        <div class="pane-sm sidebar" style="width:220px;">
+
+          <nav class="nav-group">
+            <p class="nav-group-title text-center">Selected</p>
+            <p class="nav-group-item">
+              <span>Titleqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</span><br>
+              <strong>List item title1111111111111111111111111</strong>
+              <hr>
+            </p>
+            <p class="nav-group-item">
+              <span>Titleqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq</span><br>
+              <strong>List item title1111111111111111111111111</strong>
+              <hr>
+            </p>
+          </nav>
+        </div>
+
+        <div class="pane">
+          <table class="table-striped">
+            <colgroup span="1" style="width:3em;">
+            <thead>
+              <tr>
+                <th> </th>
+                <th>Name</th>
+                <th>Time Stamp</th>
+                <th>File Size</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td>photon.css</td>
+                <td>CSS</td>
+                <td>28K</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td>photon.css</td>
+                <td>CSS</td>
+                <td>28K</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td>photon.css</td>
+                <td>CSS</td>
+                <td>28K</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+      </div>
+    </div>
+    <footer class="toolbar toolbar-footer">
+      <h1 class="title">Status: </h1>
+    </footer>
+  </div>
+
+</body>
+</html>
