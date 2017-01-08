@@ -2,3 +2,5 @@ image
 node_modules
 released/
 src/js/
+kei-win32-x64/
+kei-linux-x64/
