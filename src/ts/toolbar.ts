@@ -67,10 +67,18 @@ export class ToolbarComponent implements Mithril.Component<ToolbarController> {
   getIPTC = (fstats) => {
     console.log(fstats)
 
+    // Config data without value
+    const etOps = ['Keywords', 'ObjectName']
+
+    // Exiftool option without value
+    if(this.vm.settings.isIgnoreMinorErr()) {
+      etOps.push('ignoreMinorErrors')
+    }
+
     const filepath = path.join(this.vm.currentDir(), fstats.name)
     return new Promise((resolve, reject) =>{
       this.vm.et
-      .then(() => this.vm.ep.readMetadata(filepath, ['Keywords', 'ObjectName']))
+      .then(() => this.vm.ep.readMetadata(filepath, etOps))
       .then((res) => {
         if (res.data && res.data[0].Error) { // if file format is wrong
           console.log(res.data[0].Error)
@@ -235,43 +243,61 @@ export class ToolbarComponent implements Mithril.Component<ToolbarController> {
               [
                 m("button.btn.btn-default.btn-large", {onclick: this.onclickHome},
                   [
-                    m("span.icon.icon-home"),
-                    " Home"
+                    m('',[
+                      m("span.icon.icon-home"),
+                      m.trust("&thinsp;"),
+                      "Home"
+                    ])
                   ]
                 ),
 
                 m("button.btn.btn-default.btn-large", {onclick: this.onclickFolder},
                   [
-                    m("span.icon.icon-folder"),
-                    " Folder"
+                    m('',[
+                      m("span.icon.icon-folder"),
+                      m.trust("&thinsp;"),
+                      "Folder"
+                    ])
                   ]
                 )
               ]
             ),
             m("button.btn.btn-default.btn-large", {onclick: this.onclickRefresh},
               [
-                m("span.icon.icon-arrows-ccw"),
-                " Refresh"
+                m('',[
+                  m("span.icon.icon-arrows-ccw"),
+                  m.trust("&thinsp;"),
+                  "Refresh"
+                ])
               ]
             ),
             m("button.btn.btn-default.btn-large", {class: this.batchmode() ? 'btn-primary' : '', onclick: this.onclickSetTags},
               [
-                m("span.icon.icon-brush"),
-                " Set Tags"
+                m('',[
+                  m("span.icon.icon-brush"),
+                  m.trust("&thinsp;"),
+                  "Set Tags"
+                ])
               ]
             ),
             m(".btn-group.pull-right",
               [
                 m("button.btn.btn-default.btn-large", {class: this.settingmode() ? 'btn-primary' : '', onclick: this.onclickSettings},
                   [
-                    m("span.icon.icon-cog"),
-                    " Settings"
+                    m('',[
+                      m("span.icon.icon-cog"),
+                      m.trust("&thinsp;"),
+                      "Settings"
+                    ])
                   ]
                 ),
                 m("button.btn.btn-default.btn-large", {onclick: this.onclickAbout},
                   [
-                    m("span.icon.icon-info-circled"),
-                    " About"
+                    m('',[
+                      m("span.icon.icon-info-circled"),
+                      m.trust("&thinsp;"),
+                      "About"
+                    ])
                   ]
                 )
               ]
