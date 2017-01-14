@@ -67,7 +67,7 @@ export class MainWComponent implements Mithril.Component<MainWController> {
     return m(".window-content",
       m(".pane-group",
         [
-          m(".pane-sm.sidebar", {style: {"width": "220px"}},
+          m(".pane-sm.sidebar", {style: {"min-height": "1000%", "height": "100%"}},
             m("nav.nav-group",
               [
                 m("p.nav-group-title.text-center",
@@ -76,6 +76,10 @@ export class MainWComponent implements Mithril.Component<MainWController> {
                 this.vm.cwdFiles().filter((elm) => {return elm.checked()}).map((element: ImgFileInfo) => {
                   return m("p.nav-group-item",
                     [
+                      m("span", {style: {"font-size": "80%"}},
+                        element.file().name ? element.file().name : 'Empty'
+                      ),
+                      m("br"),
                       m("span",
                         element.iptc().ObjectName ? element.iptc().ObjectName : 'Empty'
                       ),
