@@ -4,3 +4,5 @@ released/
 src/js/
 kei-win32-x64/
 kei-linux-x64/
+kei-darwin-x64/
+.fusebox/
