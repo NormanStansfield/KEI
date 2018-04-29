@@ -39,9 +39,7 @@ export class AppModel {
   private _ep
   private _et
 
-  readonly sepArray: [
-    string[]
-  ]
+  readonly sepArray: Array<[string, string]>
 
   constructor() {
     // separators
