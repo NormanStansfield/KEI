@@ -1,11 +1,10 @@
 {
   "name": "kei",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./released/main.js",
   "license": "MIT",
   "dependencies": {
     "dist-exiftool": "^10.33.1",
-    "electron": "1.4.8",
     "exiftool.exe": "^10.33.0",
     "exiftool.pl": "^10.33.0",
     "mithril": "^0.2.5",
@@ -19,8 +18,10 @@
     "@types/shelljs": "^0.3.33",
     "del": "^2.2.2",
     "devtron": "^1.4.0",
+    "electron": "^1.8.6",
     "electron-connect": "^0.6.1",
     "eslint": "^3.11.1",
+    "fuse-box": "^3.2.2",
     "gulp": "^3.9.1",
     "gulp-tslint": "^7.0.1",
     "gulp-typescript": "^3.1.3",
