@@ -1,3 +1,6 @@
+const env = process.env.NODE_ENV || 'production';
+const isProduction = env !== 'development';
+
 const electron = require('electron')
 const {
   app,
@@ -9,22 +12,22 @@ const url = require('url')
 
 let mainWindow
 
-// const client = require('electron-connect').client
 
 const createWindow = () => {
   mainWindow = new BrowserWindow({width: 900, height: 600})
 
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
+  if(isProduction) {
+    mainWindow.loadURL(url.format({
+      pathname: path.join(electron.app.getAppPath(), 'released', 'index.html'),
+      protocol: 'file:',
+      slashes: true
+    }))
+  } else {
+    mainWindow.loadURL('http://localhost:4444/released');
+    // Open the DevTools
+    mainWindow.webContents.openDevTools()
+  }
 
-  // Open the DevTools
-  // mainWindow.webContents.openDevTools()
-
-  // For electron-connect
-  // client.create(mainWindow);
 
   mainWindow.on('closed', () => {
     mainWindow = null
