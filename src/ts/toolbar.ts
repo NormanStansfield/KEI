@@ -215,7 +215,7 @@ export class ToolbarComponent implements Mithril.Component<ToolbarController> {
 
   onclickAbout = () => {
     const filepath = url.format({
-      pathname: path.join(__dirname, 'about.html'),
+      pathname: path.join(remote.app.getAppPath(), 'released', 'about.html'),
       protocol: 'file:',
       slashes: true
     })
