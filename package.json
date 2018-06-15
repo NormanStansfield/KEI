@@ -8,7 +8,10 @@
     "dev": "yarn run cross-env NODE_ENV=development && node fuse ",
     "prod": "yarn run cross-env NODE_ENV=production && node fuse prod && yarn run electron .",
     "release": "yarn run cross-env NODE_ENV=production && node fuse release",
-    "test": "yarn run release && yarn ava --verbose"
+    "test": "yarn run release && yarn ava --verbose --serial",
+    "ltest": "yarn ava --verbose --serial",
+    "fmt": "yarn prettier --write './src/ts/**/*.ts'",
+    "lint": "yarn tslint './src/ts/**/*.ts'"
   },
   "dependencies": {
     "dist-exiftool": "^10.33.1",
@@ -32,8 +35,14 @@
     "eslint": "^3.11.1",
     "express": "^4.16.3",
     "fuse-box": "^3.2.2",
+    "node-iptc": "^1.0.5",
     "nodemon": "^1.17.4",
+    "prettier": "^1.12.1",
+    "proxyrequire": "^1.0.21",
+    "randomatic": "^3.0.0",
+    "sinon": "^5.0.7",
     "spectron": "~3.8.0",
+    "spectron-fake-dialog": "^0.0.1",
     "tslint": "^4.0.2",
     "typescript": "^2.1.4",
     "uglify-es": "^3.3.9",
