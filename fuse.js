@@ -9,6 +9,8 @@ const { FuseBox,
         Sparky
 } = require("fuse-box/es6");
 // } = require("fuse-box");
+//const StubPlugin = require('proxyrequire').FuseBoxStubPlugin(/toolbar.ts/);
+const StubPlugin = require('proxyrequire').FuseBoxStubPlugin();
 
 const express = require("express");
 const path = require("path");
@@ -32,6 +34,7 @@ Sparky.task('renderer', ['copy:rdr:resources'], () => {
     useTypescriptCompiler : true,
     plugins: [
       EnvPlugin({ NODE_ENV: isProduction ? "production" : "development" }),
+      StubPlugin,
       [SassPlugin(), CSSPlugin()],
       CSSPlugin(),
       isProduction && UglifyJSPlugin(),
@@ -57,8 +60,8 @@ Sparky.task('renderer', ['copy:rdr:resources'], () => {
 
   const app = fuse
   .bundle('renderer')
-  .instructions(`> [ts/index.ts]`);
-// NG  .instructions(`> ts/index.ts`);
+  .instructions(`> [ts/renderer/index.ts]`);
+// NG  .instructions(`> ts/renderer/index.ts`);
 
   if (!isProduction) {
     app
@@ -94,8 +97,8 @@ Sparky.task('main', () => {
 
   const app = fuse
   .bundle('main')
-// NG .instructions(`> ts/main.ts`);
-  .instructions(`> [ts/main.ts]`);
+// NG .instructions(`> ts/main/main.ts`);
+  .instructions(`> [ts/main/main.ts]`);
 
   if (!isProduction) {
     app
