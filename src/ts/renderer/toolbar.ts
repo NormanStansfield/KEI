@@ -260,7 +260,7 @@ export class ToolbarComponent implements Mithril.Component<ToolbarController> {
           ]
         ),
         m(
-          'button.btn.btn-default.btn-large#set_tags',
+          'button.btn.btn-default.btn-large#set-tags',
           {
             class: this.batchmode() ? 'btn-primary' : '',
             onclick: this.onclickSetTags,
