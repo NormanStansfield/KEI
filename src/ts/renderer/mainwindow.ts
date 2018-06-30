@@ -75,20 +75,20 @@ export class MainWComponent implements Mithril.Component<MainWController> {
               .map((element: ImgFileInfo) => {
                 return m('p.nav-group-item', [
                   m(
-                    'span',
+                    'span#selected_file',
                     {style: {'font-size': '80%'}},
                     element.file().name ? element.file().name : 'Empty'
                   ),
                   m('br'),
                   m(
-                    'span',
+                    'span#ObjectName',
                     element.iptc().ObjectName
                       ? element.iptc().ObjectName
                       : 'Empty'
                   ),
                   m('br'),
                   m(
-                    'strong',
+                    'strong#Keywords',
                     element.iptc().Keywords
                       ? new Array(element.iptc().Keywords).join()
                       : 'Empty'
